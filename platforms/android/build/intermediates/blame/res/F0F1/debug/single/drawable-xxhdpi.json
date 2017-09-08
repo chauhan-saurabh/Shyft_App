@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "/Users/saurabh.chauhan/Desktop/Saurabh_Chauhan/Shyft/platforms/android/build/intermediates/res/merged/F0F1/debug/drawable-xxhdpi/background.png",
+        "source": "/Users/saurabh.chauhan/Desktop/Saurabh_Chauhan/Shyft/platforms/android/src/main/res/drawable-xxhdpi/background.png"
+    },
+    {
+        "merged": "/Users/saurabh.chauhan/Desktop/Saurabh_Chauhan/Shyft/platforms/android/build/intermediates/res/merged/F0F1/debug/drawable-xxhdpi/icon.png",
+        "source": "/Users/saurabh.chauhan/Desktop/Saurabh_Chauhan/Shyft/platforms/android/src/main/res/drawable-xxhdpi/icon.png"
+    },
+    {
+        "merged": "/Users/saurabh.chauhan/Desktop/Saurabh_Chauhan/Shyft/platforms/android/build/intermediates/res/merged/F0F1/debug/drawable-xxhdpi/car.png",
+        "source": "/Users/saurabh.chauhan/Desktop/Saurabh_Chauhan/Shyft/platforms/android/src/main/res/drawable-xxhdpi/car.png"
+    },
+    {
+        "merged": "/Users/saurabh.chauhan/Desktop/Saurabh_Chauhan/Shyft/platforms/android/build/intermediates/res/merged/F0F1/debug/drawable-xxhdpi/menu.png",
+        "source": "/Users/saurabh.chauhan/Desktop/Saurabh_Chauhan/Shyft/platforms/android/src/main/res/drawable-xxhdpi/menu.png"
+    },
+    {
+        "merged": "/Users/saurabh.chauhan/Desktop/Saurabh_Chauhan/Shyft/platforms/android/build/intermediates/res/merged/F0F1/debug/drawable-xxhdpi/logo.png",
+        "source": "/Users/saurabh.chauhan/Desktop/Saurabh_Chauhan/Shyft/platforms/android/src/main/res/drawable-xxhdpi/logo.png"
+    }
+]

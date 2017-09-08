@@ -1,0 +1,137 @@
+
+<ActionBar class="action-bar">
+        <!--
+        Use the NavigationButton as a side-drawer button in Android because ActionItems are shown on the right side of the ActionBar
+        -->
+        <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+        <!--
+        Use the ActionItem for IOS with position set to left. Using the NavigationButton as a side-drawer button in iOS is not possible, because its function is to always navigate back in the application.
+        -->
+        <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
+            ios.position="left">
+        </ActionItem>
+        <StackLayout orientation="horizontal" style="horizontal-align: center;" >
+          <Image class="cloud" src="https://www.manageengine.com.au/fr/mobile-device-management/images/cloud-icon-1.png" style="text-align: center; vertical-align: center;"></Image>
+          <Label text="Shyft"  class="action-label" style="padding-left: 5"></Label>
+        </StackLayout>
+      <ActionItem (tap)="rightButton()" 
+        ios.systemIcon="3" android.systemIcon="ic_menu_edit"
+        ios.position="right"></ActionItem>
+    </ActionBar>
+    
+    <!--
+    RadSideDrawer is a UI component part of the Progress NativeScript UI set of components.
+    Learn more about the RadSideDrawer UI component and how it can be customized in this documentation article:
+    http://docs.telerik.com/devtools/nativescript-ui/Controls/Angular/SideDrawer/getting-started
+    The RadSideDrawer component is designed to be used as a root element and
+    it shouldn't have any other siblings other than the <ActionBar> component.
+    -->
+    <RadSideDrawer #drawer showOverNavigation="true" [drawerTransition]="sideDrawerTransition">
+        <!--
+        Use the tkDrawerContent directive to display the content of the app drawer on this page.
+        -->
+        <StackLayout tkDrawerContent>
+            <MyDrawer [selectedPage]="'Settings'"></MyDrawer>
+        </StackLayout>
+    
+        <!--
+        Use the tkMainContent directive to display the content of the page when you have an app drawer.
+        -->
+        <GridLayout class="page page-content" tkMainContent>
+            <GridLayout columns="*" rows="*,3*,*,*" style="padding: 10;">
+              <StackLayout col="0" row="0" style="margin-bottom: 10; margin-top: 10; border-width: 1; border-color: black;">
+                <GridLayout columns="*" rows="*,*">
+                  <StackLayout col="0" row="0" style=" border-width: 1; border-color: #dadada;">
+                      <Label class="p-5" text="Just For You" textWrap="true" style="font-weight: bold"></Label>
+                  </StackLayout>
+                  <StackLayout col="0" row="1" >
+                      <GridLayout columns="*, 7*" rows="*">
+                          <StackLayout col="0" row="0" >
+                              <Label class="page-iconMonstar fa" text="&#xf23c;" style="padding-left: 10"></Label>
+                          </StackLayout>
+                          <StackLayout col="1" row="0" >
+                              <Label text="Special Offers" textWrap="true" style="color: #dadada; padding-top: 10;"></Label>
+                          </StackLayout>
+                      </GridLayout>
+                  </StackLayout>
+                </GridLayout>
+              </StackLayout>
+              <StackLayout col="0" row="1">
+                <GridLayout columns="*,*" rows="*,4*,4*" style="border-width: 1;">
+                           <StackLayout col="0" row="0" style="vertical-align: center;">
+                            
+                            </StackLayout>
+                            <StackLayout col="1" row="0" style="horizontal-align: right; margin-right: 15; vertical-align: center;">
+                                    <Label class="page-plus fa"  text="&#xf067;" (tap)="add()" ></Label>
+                            </StackLayout>
+                                <StackLayout col="0" row="1" style="vertical-align: center;">
+                                    <GridLayout columns="*" rows="2*,*" style="padding-left: 10; padding-right: 10; padding-bottom: 10">
+                                        <StackLayout col="0" row="0" style="background-color: #4286f4; border-width: 1; border-color: black;">
+                                            <Label class="page-iconSetting fa" text="&#xf085;"></Label>
+                                            <Label class="h3" text="2017 Honda Pilot EX-L" textWrap="true" style="padding-top: 8; text-align: center; color: white; padding-left: 5; padding-right: 5;"></Label>
+                                            <Label class="h3" text="11,417 Miles" textWrap="true" style="text-align: center; color: white"></Label>
+                                        </StackLayout>
+                                        <StackLayout col="0" row="1" style="background-color: white; border-width: 1; border-color: black;">
+                                            <Label class=" blueFont" text="Schedule Service" textWrap="true"></Label>
+                                        </StackLayout>
+                                    </GridLayout>
+                                </StackLayout>
+                            <StackLayout col="1" row="1">
+                                <GridLayout columns="*" rows="2*,*" style=" padding-right: 10; padding-bottom: 10">
+                                <StackLayout col="0" row="0" style="background-color: #41e5f4; border-width: 1; border-color: black;">
+                                    <Label class="page-iconWarning fa" text="&#xf071;"></Label>
+                                </StackLayout>
+                                <StackLayout col="0" row="1" style="background-color: white; border-width: 1; border-color: black;">
+                                    <Label class=" blueFont" text="Check For Recalls" textWrap="true"></Label>
+                                </StackLayout>
+                                </GridLayout>
+                            </StackLayout>
+                            <StackLayout col="0" row="2">
+                                <GridLayout columns="*" rows="2*,*" style="padding-left: 10; padding-right: 10; padding-bottom: 10">
+                                <StackLayout col="0" row="0" style="background-color: #f4a641; border-width: 1; border-color: black;">
+                                    <Label class="page-iconSetting1 fa" text="&#xf0c7;"></Label>
+                                </StackLayout>
+                                <StackLayout col="0" row="1" style="background-color: white; border-width: 1; border-color: black;">
+                                    <Label class=" blueFont" text="Service History" textWrap="true"></Label>
+                                </StackLayout>
+                                </GridLayout>
+                            </StackLayout>
+                      <StackLayout col="1" row="2" >
+                        <GridLayout columns="*" rows="2*,*" style=" padding-right: 10; padding-bottom: 10">
+                          <StackLayout col="0" row="0" style="background-color: #FFB6C1; border-width: 1; border-color: black;">
+                              <Label class="page-iconCar fa" text="&#xf1b9;"></Label>
+                          </StackLayout>
+                          <StackLayout col="0" row="1" style="background-color: white; border-width: 1; border-color: black;">
+                              <Label class=" h3 blueFont" text="Get Trade-In Appraisel" textWrap="true"></Label>
+                          </StackLayout>
+                        </GridLayout>
+                      </StackLayout>
+                </GridLayout>
+              </StackLayout>
+              <StackLayout col="0" row="2" style="margin-bottom: 10; margin-top: 10; border-width: 1; border-color: black;">
+                <GridLayout columns="*" rows="*">
+                    <StackLayout col="0" row="0" style="background-color: white; border-width: 1; border-color: #dadada;">
+                      <Label text="Did you know?" textWrap="true" class="you-know"></Label>
+                      <TextView text="Most newer cars use 0w-20 synthetic Blend Motor Oil. It allows the vehicles to run more efficiently and lasts longer  than normal conventinal oil." hint="Enter some text" [editable]="editState"
+                      class="text-data"></TextView>
+                    </StackLayout> 
+                </GridLayout>
+              </StackLayout>
+              <StackLayout col="0" row="3" style="background-color: white; padding: 10;margin-bottom: 10; margin-top: 10; border-width: 1; border-color: black;">
+                  <GridLayout columns="2*, 3*, *" rows="*" style="border-width: 2; border-color: #41cdf4;">
+                      <StackLayout col="0" row="0" >
+                          <Label class="page-iconmagic fa" text="&#xf0d0;" style="horizontal-align: right; vertical-align: center; margin-top: 20"></Label>
+                      </StackLayout>
+    
+                      <StackLayout col="1" row="0" >
+                          <Label class="blueFont" text="Price Car Repaires" textWrap="true" style="text-align: center; vertical-align: center;margin-top: 20;"></Label>
+                      </StackLayout>
+                      <StackLayout col="2" row="0" >
+    
+                      </StackLayout>
+                  </GridLayout>
+              </StackLayout>
+            </GridLayout>
+          </GridLayout>
+    </RadSideDrawer>
+    
